@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Tabel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="judul">Halaman Tabel</h1>
+        <img src="itera.png" alt="logo ITERA" width="75px" height="75px">
+    </header>
+
+    <aside>
+        <h3>Sidebar</h3>
+        <p>Silahkan pilih ingin ke Halaman mana?</p>
+        <nav class="navigasi">
+            <ul>
+                <button><a href="https://riksan-cahyowadi.github.io/">Home</a></button>
+                <button><a href="https://riksan-cahyowadi.github.io/form">Form</a></button>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <div class="tabel">
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Program Studi</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Jenis Kelamin</th>
+            <th>Tanggal Lahir</th>
+            <th>Alamat</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Riksan Cahyowadi</td>
+            <td>121140106</td>
+            <td>Teknik Informatika</td>
+            <td>riksan.121140106@student.itera.ac.id</td>
+            <td>123456789</td>
+            <td>Pria</td>
+            <td>2003-01-04</td>
+            <td>Merbau Mataram</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tegar Kurniawan</td>
+            <td>121346301</td>
+            <td>Sasta Inggris</td>
+            <td>tegar.121346301@student.itera.ac.id</td>
+            <td>qwerty</td>
+            <td>Pria</td>
+            <td>2001-05-27</td>
+            <td>Tanjung Bintang</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rahmat Sanjaya</td>
+            <td>121160341</td>
+            <td>Farmasi</td>
+            <td>Rahmat.121160341@student.itera.ac.id</td>
+            <td>zxcv123</td>
+            <td>Pria</td>
+            <td>2002-01-13</td>
+            <td>Kemiling</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Adelia Kusumawati</td>
+            <td>12123079</td>
+            <td>Teknik Fisika</td>
+            <td>adelia.12123079@student.itera.ac.id</td>
+            <td>kusuma99</td>
+            <td>Wanita</td>
+            <td>2003-06-18</td>
+            <td>Tangerang</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Risma Amanda</td>
+            <td>12130076</td>
+            <td>Biologi</td>
+            <td>risma.12130076@student.itera.ac.id</td>
+            <td>risma76</td>
+            <td>Wanita</td>
+            <td>2003-01-04</td>
+            <td>Natar</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td id="nama"></td>
+            <td id="nim"></td>
+            <td id="prodi"></td>
+            <td id="email"></td>
+            <td id="password"></td>
+            <td id="jenis_kelamin"></td>
+            <td id="tanggal_lahir"></td>
+            <td id="alamat"></td>
+        </tr>
+    </table>
+    </div>
+
+
+    <script>
+        // Daftar parameter yang akan diambil dari URL
+        var parameters = [
+            "nama", "nim", "prodi", "email", "password",
+            "jenis_kelamin", "tanggal_lahir", "alamat"
+        ];
+    
+        // Membuat objek untuk menyimpan nilai-nilai parameter
+        var data = {};
+    
+        // Ambil nilai parameter dari URL dan decode
+        parameters.forEach(function (param) {
+            var encodedValue = new URLSearchParams(window.location.search).get(param);
+            var decodedValue = decodeURIComponent(encodedValue);
+            data[param] = decodedValue;
+        });
+    
+        // Menampilkan data dalam elemen HTML
+        for (var param in data) {
+            if (data.hasOwnProperty(param)) {
+                var element = document.getElementById(param);
+                if (element) {
+                    element.textContent = data[param];
+                }
+            }
+        }
+    </script>    
+
+    <footer>
+        <p>Riksan Cahyowadi</p>
+        <a href="riksan.121140106@student.itera.ac.id">riksan.121140106@student.itera.ac.id</a>
+    </footer>
+</body>
+</html>
